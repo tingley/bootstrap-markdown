@@ -611,6 +611,9 @@
       // Disable configured disabled buttons
       this.disableButtons(this.$options.disabledButtons);
 
+      // Perform any callback
+      this.$options.onEndPreview(this);
+
       // Back to the editor
       this.$textarea.show();
       this.__setListener();
@@ -1428,6 +1431,7 @@
     /* Events hook */
     onShow: function(e) {},
     onPreview: function(e) {},
+    onEndPreview: function(e) {},
     onSave: function(e) {},
     onBlur: function(e) {},
     onFocus: function(e) {},
